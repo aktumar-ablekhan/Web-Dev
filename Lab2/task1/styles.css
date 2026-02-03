@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 50px;
+    
+    min-height: 100vh;      
+    padding-bottom: 100px; 
+}
+
+
+
+.fb-content {
+    width: 500px; 
+}
+
+.fb-logo {
+    height: 106px;
+    margin-left: -20px;     
+    display: block;
+}
+
+.fb-text {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: normal;
+    color: #1c1e21;
+    margin-top: -10px;
+}
+
+/* Оң жақтағы форма */
+.fb-form-container {
+    width: 396px;
+}
+
+.login-form {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.login-form input {
+    height: 52px;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 17px;
+    outline-color: #1877f2;
+}
+
+.login-btn {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.forgot-link {
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #dadde1;
+    margin-bottom: 20px;
+}
+
+.create-account-btn {
+    background-color: #42b72a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 12px 16px;
+    width: fit-content;
+    margin: 0 auto 10px auto;
+    cursor: pointer;
+}
+
+.create-page-text {
+    margin-top: 28px;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+.footer{
+  background:#fff;
+  padding: 20px 0;
+  border-top: 1px solid #dddfe2;
+}
+
+
+.footer-box {
+    background-color: white;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-content {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #8a8d91;
+}
+
+.lang, .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+}
+
+.lang a, .footer-links a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #8a8d91;
+}
+
+.lang a:hover, .footer-links a:hover {
+    text-decoration: underline;
+}
+
+.line {
+    border-top: 1px solid #dddfe2;
+    margin: 10px 0;
+}
+
+#copyright {
+    font-size: 11px;
+    margin-top: 20px;
+    display: block;
+}
