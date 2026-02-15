@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f6f7fb;
+        color: #222;
+      }
+
+      header {
+        background: #222;
+        color: #fff;
+        padding: 14px 18px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        opacity: 0.9;
+      }
+
+      main {
+        max-width: 680px;
+        margin: 40px auto;
+        padding: 0 16px;
+      }
+
+      .card {
+        background: #fff;
+        border: 1px solid #e7e7e7;
+        border-radius: 10px;
+        padding: 22px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      }
+
+      .title {
+        text-align: center;
+        margin: 0 0 18px;
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      label {
+        position: absolute;
+        left: -9999px;
+      }
+
+      input[type="text"] {
+        flex: 1;
+        padding: 10px 12px;
+        border: 1px solid #d9d9d9;
+        border-radius: 6px;
+        font-size: 14px;
+        outline: none;
+      }
+
+      input[type="text"]:focus {
+        border-color: #4a8cff;
+        box-shadow: 0 0 0 3px rgba(74, 140, 255, 0.15);
+      }
+
+      button {
+        padding: 10px 14px;
+        border: none;
+        border-radius: 6px;
+        background: #2f7dff;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #2567d6;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #ececec;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 12px 14px;
+        border-top: 1px solid #f0f0f0;
+        background: #fff;
+      }
+
+      li:first-child {
+        border-top: none;
+      }
+
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .task-text {
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .done .task-text {
+        text-decoration: line-through;
+        opacity: 0.6;
+      }
+
+      .delete-btn {
+        background: transparent;
+        color: #ff3b3b;
+        border: 1px solid rgba(255, 59, 59, 0.3);
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-weight: 700;
+      }
+
+      .delete-btn:hover {
+        background: rgba(255, 59, 59, 0.08);
+      }
+
+      .hint {
+        margin-top: 12px;
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ToDo List</h1>
+    </header>
+
+    <main>
+      <section class="card" aria-label="Todo app">
+        <h2 class="title">ToDo List</h2>
+
+        <form id="todoForm">
+          <label for="taskInput">New Task</label>
+          <input id="taskInput" type="text" placeholder="New Task" autocomplete="off" />
+          <button type="submit" id="addBtn">Add</button>
+        </form>
+
+        <ul id="todoList" aria-label="Task list"></ul>
+        
+      </section>
+    </main>
+
+    <script>
+      'use strict';
+
+      const todoForm = document.getElementById('todoForm');
+      const taskInput = document.getElementById('taskInput');
+      const todoList = document.getElementById('todoList');
+
+      function createTodoItem(text) {
+        // <li>
+        const li = document.createElement('li');
+
+        // left block: checkbox + text
+        const left = document.createElement('div');
+        left.className = 'left';
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+
+        const span = document.createElement('span');
+        span.className = 'task-text';
+        span.textContent = text;
+
+        // delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.type = 'button';
+        deleteBtn.className = 'delete-btn';
+        deleteBtn.textContent = '🗑';
+
+        // Events
+        checkbox.addEventListener('change', () => {
+          if (checkbox.checked) {
+            li.classList.add('done');
+          } else {
+            li.classList.remove('done');
+          }
+        });
+
+        deleteBtn.addEventListener('click', () => {
+          // removeChild alternative:
+          // todoList.removeChild(li);
+          li.remove();
+        });
+
+        // build DOM
+        left.appendChild(checkbox);
+        left.appendChild(span);
+        li.appendChild(left);
+        li.appendChild(deleteBtn);
+
+        return li;
+      }
+
+      todoForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const text = taskInput.value.trim();
+        if (text.length === 0) return;
+
+        const item = createTodoItem(text);
+        todoList.appendChild(item);
+
+        taskInput.value = '';
+        taskInput.focus();
+      });
+    </script>
+  </body>
+</html>
