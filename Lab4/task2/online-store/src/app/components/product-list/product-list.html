@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<section class="hero">
+  <h1>Интернет-магазин на Kaspi.kz</h1>
+</section>
+
+<div class="grid">
+  <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
+</div>
+
+

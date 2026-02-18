@@ -1,0 +1,119 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ProductCard } from '../product-card/product-card';
+import { Header } from '../header/header';
+
+
+@Component({
+  selector: 'app-product-list',
+  standalone: true,
+  imports: [CommonModule, ProductCard, Header],
+  templateUrl: './product-list.html',
+  styleUrls: ['./product-list.css'],
+})
+export class ProductList {
+  products = [
+  {
+    id: 1,
+    name: 'Apple iPhone 15 128GB',
+    description: 'Modern iPhone with great camera and smooth performance.',
+    price: 376000,
+    rating: 4.9,
+    image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSQosLj0xOSch_QRmGNQ0EiIT6LQrhM2BF_sWD6Zp8xhKWVqpuTE8-PuXA_ngWZFN2PSTgz0kSk3_nSinsK79nBTKEXGGiXD557qnZZeG8s3W3JCnOZChIs_CtfqAmmi0xSk4JHug&usqp=CAc',
+    images: [],
+    link: 'https://kaspi.kz/shop/p/apple-iphone-15-128gb-rozovyi-113137949/',
+  },
+  {
+    id: 2,
+    name: 'Apple AirPods Pro',
+    description: 'Comfortable earbuds with excellent sound quality.',
+    price: 99900,
+    rating: 4.8,
+    image: 'https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=600',
+    images: [],
+    link: 'https://kaspi.kz/shop/p/naushniki-apple-airpods-pro-belyi-4804718/',
+  },
+  {
+    id: 3,
+    name: 'Sony PlayStation 5',
+    description: 'Popular gaming console for entertainment.',
+    price: 299000,
+    rating: 4.9,
+    image: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600',
+    images: [],
+    link: 'https://kaspi.kz/shop/p/sony-playstation-5-belyi-100746577/',
+  },
+  {
+    id: 4,
+    name: 'Samsung 55" 4K Smart TV',
+    description: 'Large 4K television with smart features.',
+    price: 279000,
+    rating: 4.7,
+    image: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600',
+    images: [],
+    link: 'https://kaspi.kz/shop/',
+  },
+  {
+    id: 5,
+    name: 'Lenovo IdeaPad 15.6"',
+    description: 'Affordable laptop for study and work.',
+    price: 189000,
+    rating: 4.6,
+    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600',
+    images: [],
+    link: 'https://kaspi.kz/shop/',
+  },
+  {
+    id: 6,
+    name: 'Xiaomi Redmi Note 13 Pro',
+    description: 'Mid-range smartphone with great battery.',
+    price: 139000,
+    rating: 4.7,
+    image: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600',
+    images: [],
+    link: 'https://kaspi.kz/shop/',
+  },
+  {
+    id: 7,
+    name: 'Logitech MX Master 3S',
+    description: 'Premium productivity mouse.',
+    price: 54990,
+    rating: 4.9,
+    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600',
+    images: [],
+    link: 'https://kaspi.kz/shop/',
+  },
+  {
+    id: 8,
+    name: 'Xiaomi Robot Vacuum',
+    description: 'Smart robot vacuum cleaner.',
+    price: 74990,
+    rating: 4.8,
+    image: 'data:image/jpeg;base64,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',
+    images: [],
+    link: 'https://kaspi.kz/shop/',
+  },
+  {
+    id: 9,
+    name: 'Power Bank 20000mAh',
+    description: 'Portable charger for all devices.',
+    price: 19990,
+    rating: 4.6,
+    image: 'data:image/jpeg;base64,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',
+    images: [],
+    link: 'https://kaspi.kz/shop/',
+  },
+  {
+    id: 10,
+    name: 'Apple Watch Series 9',
+    description: 'Smartwatch with health tracking features.',
+    price: 249000,
+    rating: 4.8,
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600',
+    images: [],
+    link: 'https://kaspi.kz/shop/',
+  },
+];
+
+
+}

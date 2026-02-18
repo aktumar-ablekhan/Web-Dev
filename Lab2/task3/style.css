@@ -207,6 +207,7 @@ details[open] summary::before {
     margin-bottom: 12px;
     font-weight: 700;
     color: #1f6feb;
+    margin-left:300px;
 }
 .addon-card h3 {
     font-size: 20px;
@@ -235,4 +236,14 @@ details[open] summary::before {
     .button {
         flex-direction: column;
     }
+}
+
+.enterprise-featured {
+    background-color: #0969da; /* Синий цвет GitHub */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Убираем падинги, чтобы шапка прилегала */
+    overflow: hidden;
+    border: none;
 }

@@ -1,0 +1,32 @@
+<div class="tile" *ngIf="product() as p">
+  <a class="tile-inner" [href]="p.link" target="_blank" rel="noopener">
+    <div class="title">{{ p.name }}</div>
+    
+    <div class="img-wrap">
+      <img [src]="p.image" [alt]="p.name" />
+    </div>
+  </a>
+
+  <div class="desc">
+    {{ p.description }}
+  </div>
+
+  <div class="meta">
+    <div class="price">{{ p.price | number }} ₸</div>
+
+    <div class="rating">
+      <span
+        class="star"
+        *ngFor="let s of stars()"
+        [class.filled]="s <= roundedRating()"
+        >★</span
+      >
+      <span class="rate-num">{{ p.rating }}</span>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button type="button" (click)="shareTelegram()">Telegram</button>
+    <button type="button" (click)="shareWhatsapp()">WhatsApp</button>
+  </div>
+</div>

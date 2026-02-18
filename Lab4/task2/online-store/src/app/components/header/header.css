@@ -1,0 +1,65 @@
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #e53935;
+  display: inline-block;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  font-weight: 600;
+}
+
+.pill {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  color: #222;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    display: none;
+  }
+}
