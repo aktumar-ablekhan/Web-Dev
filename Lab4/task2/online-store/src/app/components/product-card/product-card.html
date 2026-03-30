@@ -15,12 +15,16 @@
     <div class="price">{{ p.price | number }} ₸</div>
 
     <div class="rating">
-      <span
-        class="star"
-        *ngFor="let s of stars()"
-        [class.filled]="s <= roundedRating()"
-        >★</span
-      >
+    <span
+      class="star"
+      *ngFor="let s of stars()"
+      [class.filled]="s <= roundedRating() && p.rating === 4.6"
+    >
+      ★
+    </span>
+
+
+
       <span class="rate-num">{{ p.rating }}</span>
     </div>
   </div>

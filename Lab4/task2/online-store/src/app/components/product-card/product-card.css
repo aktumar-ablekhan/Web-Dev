@@ -62,13 +62,14 @@ img {
 }
 
 .star {
-  font-size: 14px;
-  opacity: 0.25;
-}
-.star.filled {
-  opacity: 1;
+  font-size: 15px;
+  color: #19db29;
+  text-decoration-color: #19db29;
 }
 
+.star.filled {
+  color: #000; /* бояулы */
+}
 .rate-num {
   font-size: 12px;
   opacity: 0.75;

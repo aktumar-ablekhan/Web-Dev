@@ -113,7 +113,18 @@ export class ProductList {
     images: [],
     link: 'https://kaspi.kz/shop/',
   },
-];
+  {
+  id: 11,
+  name: 'HP LaserJet Printer',
+  description: 'Reliable printer for home and office use.',
+  price: 89000,
+  rating: 4.8,
+  image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600',
+  images: [],
+  link: 'https://kaspi.kz/shop/',
+},
 
+]//                                                                                                                                      .sort((a,b) => b.rating-a.rating);
+//                                                                                                                        .sort((a, b) => a.name.localeCompare(b.name);
 
 }
